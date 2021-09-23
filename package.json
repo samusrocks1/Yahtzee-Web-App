@@ -1,0 +1,8 @@
+{
+    "name": "Yahtzee_Web_Application",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "wtayl",
+    "contributors": [],
+    "dependencies": {}
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Yahtzee</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Yahtzee!</h1>
+        <h2>Instructions:</h2>
+        <p><a href="instructions.html">Click here to read how to play Yahtzee.</a></p>
+        <div id="scoreCard">
+            <h2>Score Card:</h2>
+            <table>
+                <th>
+                    Upper Row
+                </th>
+                <tr>
+                    <td>Ones</td>
+                    <td>Twos</td>
+                    <td>Threes</td>
+                    <td>Fours</td>
+                    <td>Fives</td>
+                    <td>Sixes</td>
+                    <td>Bonus</td>
+                </tr>
+                <tr>
+                    <td id='ones'>0</td>
+                    <td id='twos'>0</td>
+                    <td id='threes'>0</td>
+                    <td id='fours'>0</td>
+                    <td id='fives'>0</td>
+                    <td id='sixes'>0</td>
+                    <td id='bonus'>0</td>
+                </tr>
+                <tr>
+                    <td><button id="onesBtn" type="button">Use Ones</button></td>
+                    <td><button id="twosBtn" type="button">Use Twos</button></td>
+                    <td><button id="threesBtn" type="button">Use Threes</button></td>
+                    <td><button id="foursBtn" type="button">Use Fours</button></td>
+                    <td><button id="fivesBtn" type="button">Use Fives</button></td>
+                    <td><button id="sixesBtn" type="button">Use Sixes</button></td>
+                </tr>
+                <th>
+                    Lower Row
+                </th>
+                <tr>
+                    <td>Three of a Kind</td>
+                    <td>Four of a Kind</td>
+                    <td>Full House</td>
+                    <td>Small Straight</td>
+                    <td>Large Straight</td>
+                    <td>Chance</td>
+                    <td>Yahtzee</td>
+                </tr>
+                <tr>
+                    <td id='threeKind'>0</td>
+                    <td id='fourKind'>0</td>
+                    <td id='fullHouse'>0</td>
+                    <td id='smallStraight'>0</td>
+                    <td id='largeStraight'>0</td>
+                    <td id='chance'>0</td>
+                    <td id='yahtzee'>0</td>
+                </tr>
+                <tr>
+                    <td><button id="threeKindBtn" type="button">Use 3 of a Kind</button> </td>
+                    <td><button id="fourKindBtn" type="button">Use 4 of a Kind</button> </td>
+                    <td><button id="fullHouseBtn" type="button">Use Full House</button> </td>
+                    <td><button id="smallStraightBtn" type="button">Use Sm. Straight</button> </td>
+                    <td><button id="largeStraightBtn" type="button">Use Lg. Straight</button> </td>
+                    <td><button id="chanceBtn" type="button">Use Chance</button> </td>
+                    <td><button id="yahtzeeBtn" type="button">Use Yahtzee</button> </td>
+                </tr>
+                <tr>
+                    <td>Upper Total: </td>
+                    <td id='upperTotal'>0</td>
+                </tr>
+                <tr>
+                    <td>Lower Total: </td>
+                    <td id='lowerTotal'>0</td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td id='total'>0</td>
+                </tr>
+            </table>
+        </div>
+        <h3 id="round">Round 1, Roll 1</h3>
+        <form>
+            <input type="checkbox" id="dice1" name="dice1" value="dice1">
+            <label for="dice1">Hold</label>
+            <input type="checkbox" id="dice2" name="dice2" value="dice2">
+            <label for="dice2">Hold</label>
+            <input type="checkbox" id="dice3" name="dice3" value="dice3">
+            <label for="dice3">Hold</label>
+            <input type="checkbox" id="dice4" name="dice4" value="dice4">
+            <label for="dice4">Hold</label>
+            <input type="checkbox" id="dice5" name="dice5" value="dice5">
+            <label for="dice5">Hold</label>
+        </form>
+        <script src='script.js'></script>
+    </body>
+</html>
