@@ -90,7 +90,7 @@ and open the template in the editor.
                 </tr>
             </table>
         </div>
-        <h3 id="round">Round 1, Roll 1</h3>
+        <h3 id="roundText">Round: 1, Roll: 1</h3>
         <form>
             <table>
                 <tr>
@@ -101,16 +101,28 @@ and open the template in the editor.
                     <td><img src="images/6.png" alt="6 dice" id="diceFive" ></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" id="dice1" name="dice1" value="dice1">
-                        <label for="dice1">Hold</label></td>
-                    <td><input type="checkbox" id="dice2" name="dice2" value="dice2">
-                        <label for="dice2">Hold</label></td>
-                    <td><input type="checkbox" id="dice3" name="dice3" value="dice3">
-                        <label for="dice3">Hold</label></td>
-                    <td><input type="checkbox" id="dice4" name="dice4" value="dice4">
-                        <label for="dice4">Hold</label></td>
-                    <td><input type="checkbox" id="dice5" name="dice5" value="dice5">
-                        <label for="dice5">Hold</label></td>
+                    <td><button id="holdDie1" type="button">Hold</button></td>
+                    <td><button id="holdDie2" type="button">Hold</button></td>
+                    <td><button id="holdDie3" type="button">Hold</button></td>
+                    <td><button id="holdDie4" type="button">Hold</button></td>
+                    <td><button id="holdDie5" type="button">Hold</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="die1Held">Not Held</div>
+                    </td>
+                    <td>
+                        <div id="die2Held">Not Held</div>
+                    </td>
+                    <td>
+                        <div id="die3Held">Not Held</div>
+                    </td>
+                    <td>
+                        <div id="die4Held">Not Held</div>
+                    </td>
+                    <td>
+                        <div id="die5Held">Not Held</div>
+                    </td>
                 </tr>
             </table>
         </form>
