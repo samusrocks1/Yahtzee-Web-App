@@ -39,12 +39,12 @@ and open the template in the editor.
                     <td id='bonus'>0</td>
                 </tr>
                 <tr>
-                    <td><button id="onesBtn" type="button">Use Ones</button></td>
-                    <td><button id="twosBtn" type="button">Use Twos</button></td>
-                    <td><button id="threesBtn" type="button">Use Threes</button></td>
-                    <td><button id="foursBtn" type="button">Use Fours</button></td>
-                    <td><button id="fivesBtn" type="button">Use Fives</button></td>
-                    <td><button id="sixesBtn" type="button">Use Sixes</button></td>
+                    <td><button id="onesBtn" type="button" onclick="useOnes()">Use Ones</button></td>
+                    <td><button id="twosBtn" type="button" onclick="useTwos()">Use Twos</button></td>
+                    <td><button id="threesBtn" type="button" onclick="useThrees()">Use Threes</button></td>
+                    <td><button id="foursBtn" type="button" onclick="useFours()">Use Fours</button></td>
+                    <td><button id="fivesBtn" type="button" onclick="useFives()">Use Fives</button></td>
+                    <td><button id="sixesBtn" type="button" onclick="useSixes()">Use Sixes</button></td>
                 </tr>
                 <th>
                     Lower Row
@@ -68,25 +68,25 @@ and open the template in the editor.
                     <td id='yahtzee'>0</td>
                 </tr>
                 <tr>
-                    <td><button id="threeKindBtn" type="button">Use 3 of a Kind</button> </td>
-                    <td><button id="fourKindBtn" type="button">Use 4 of a Kind</button> </td>
-                    <td><button id="fullHouseBtn" type="button">Use Full House</button> </td>
-                    <td><button id="smallStraightBtn" type="button">Use Sm. Straight</button> </td>
-                    <td><button id="largeStraightBtn" type="button">Use Lg. Straight</button> </td>
-                    <td><button id="chanceBtn" type="button">Use Chance</button> </td>
-                    <td><button id="yahtzeeBtn" type="button">Use Yahtzee</button> </td>
+                    <td><button id="threeKindBtn" type="button" onclick="useThreeOfAKind()">Use 3 of a Kind</button> </td>
+                    <td><button id="fourKindBtn" type="button" onclick="useFourOfAKind()">Use 4 of a Kind</button> </td>
+                    <td><button id="fullHouseBtn" type="button" onclick="useFullHouse()">Use Full House</button> </td>
+                    <td><button id="smallStraightBtn" type="button" onclick="useSmallStraight()">Use Sm. Straight</button> </td>
+                    <td><button id="largeStraightBtn" type="button" onclick="useLargeStraight()">Use Lg. Straight</button> </td>
+                    <td><button id="chanceBtn" type="button" onclick="useChance()">Use Chance</button> </td>
+                    <td><button id="yahtzeeBtn" type="button" onclick="useYahtzee()">Use Yahtzee</button> </td>
                 </tr>
                 <tr>
                     <td>Upper Total: </td>
-                    <td id='upperTotal'>0</td>
+                    <td id="upperTotal">0</td>
                 </tr>
                 <tr>
                     <td>Lower Total: </td>
-                    <td id='lowerTotal'>0</td>
+                    <td id="lowerTotal">0</td>
                 </tr>
                 <tr>
                     <td>Total: </td>
-                    <td id='total'>0</td>
+                    <td id="total">0</td>
                 </tr>
             </table>
         </div>
@@ -101,11 +101,11 @@ and open the template in the editor.
                     <td><img src="images/6.png" alt="6 dice" id="diceFive" ></td>
                 </tr>
                 <tr>
-                    <td><button id="holdDie1" type="button">Hold</button></td>
-                    <td><button id="holdDie2" type="button">Hold</button></td>
-                    <td><button id="holdDie3" type="button">Hold</button></td>
-                    <td><button id="holdDie4" type="button">Hold</button></td>
-                    <td><button id="holdDie5" type="button">Hold</button></td>
+                    <td><button id="holdDie1" type="button" onclick="holdDieOne()">Hold</button></td>
+                    <td><button id="holdDie2" type="button" onclick="holdDieTwo()">Hold</button></td>
+                    <td><button id="holdDie3" type="button" onclick="holdDieThree()">Hold</button></td>
+                    <td><button id="holdDie4" type="button" onclick="holdDieFour()">Hold</button></td>
+                    <td><button id="holdDie5" type="button" onclick="holdDieFive()">Hold</button></td>
                 </tr>
                 <tr>
                     <td>
@@ -125,7 +125,8 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
+            <button id="roll" type="button" onclick="rollDice()">Roll the dice!</button>
         </form>
-        <script src='script.js'></script>
     </body>
+    <script src='script.js'></script>
 </html>
