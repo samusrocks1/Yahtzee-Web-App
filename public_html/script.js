@@ -33,6 +33,7 @@ let lowerCategory = [0, 0, 0, 0, 0, 0, 0];
 let upperTotal = 0;
 let lowerTotal = 0;
 let grandTotal = 0;
+let gameCounter = 0;
 outputDice();
 
 function useOnes() {
@@ -54,6 +55,7 @@ function useOnes() {
     const onesBtn = document.getElementById("onesBtn");
     onesBtn.parentNode.removeChild(onesBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -76,6 +78,7 @@ function useTwos() {
     const twosBtn = document.getElementById("twosBtn");
     twosBtn.parentNode.removeChild(twosBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -98,6 +101,7 @@ function useThrees() {
     const threesBtn = document.getElementById("threesBtn");
     threesBtn.parentNode.removeChild(threesBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -120,6 +124,7 @@ function useFours() {
     const foursBtn = document.getElementById("foursBtn");
     foursBtn.parentNode.removeChild(foursBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -142,6 +147,7 @@ function useFives() {
     const fivesBtn = document.getElementById("fivesBtn");
     fivesBtn.parentNode.removeChild(fivesBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -164,6 +170,7 @@ function useSixes() {
     const sixesBtn = document.getElementById("sixesBtn");
     sixesBtn.parentNode.removeChild(sixesBtn);
     checkBonus();
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -182,6 +189,7 @@ function useThreeOfAKind() {
     const threeKindBtn = document.getElementById("threeKindBtn");
     threeKindBtn.parentNode.removeChild(threeKindBtn);
     lowerTotal = lowerTotal + lowerCategory[0];
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -198,6 +206,7 @@ function useFourOfAKind() {
     const fourKindBtn = document.getElementById("fourKindBtn");
     fourKindBtn.parentNode.removeChild(fourKindBtn);
     lowerTotal = lowerTotal + lowerCategory[1];
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -214,12 +223,22 @@ function useFullHouse() {
     const fullHouseBtn = document.getElementById("fullHouseBtn");
     fullHouseBtn.parentNode.removeChild(fullHouseBtn);
     lowerTotal = lowerTotal + lowerCategory[2];
+    gameCounter ++;
     updateScoreCard();
 }
 
 function useSmallStraight() {
-    const allDice = [die1, die2, die3, die4, die5];
+    //const allDice = [die1, die2, die3, die4, die5];
+    allDice = [4, 2, 3, 2, 1];
     allDice.sort();
+    let counter = 0;
+    do {
+        if (allDice[counter] === allDice[counter + 1])
+        {
+            allDice.splice(counter, 1);
+        }
+        counter ++;
+    } while (counter < allDice.length);
     if (allDice[0] === allDice[1] - 1 && allDice[1] === allDice[2] - 1 && allDice[2] === allDice[3] - 1) {
         lowerCategory[3] = 30;
     } else if (allDice[1] === allDice[2] - 1 && allDice[2] === allDice[3] - 1 && allDice[3] === allDice[4] - 1) {
@@ -230,6 +249,7 @@ function useSmallStraight() {
     const smallStraightBtn = document.getElementById("smallStraightBtn");
     smallStraightBtn.parentNode.removeChild(smallStraightBtn);
     lowerTotal = lowerTotal + lowerCategory[3];
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -244,6 +264,7 @@ function useLargeStraight() {
     const largeStraightBtn = document.getElementById("largeStraightBtn");
     largeStraightBtn.parentNode.removeChild(largeStraightBtn);
     lowerTotal = lowerTotal + lowerCategory[4];
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -252,6 +273,7 @@ function useChance() {
     const chanceBtn = document.getElementById("chanceBtn");
     chanceBtn.parentNode.removeChild(chanceBtn);
     lowerTotal = lowerTotal + lowerCategory[5];
+    gameCounter ++;
     updateScoreCard();
 }
 
@@ -261,6 +283,7 @@ function useYahtzee() {
     } else {
         const yahtzeeBtn = document.getElementById("yahtzeeBtn");
         yahtzeeBtn.parentNode.removeChild(yahtzeeBtn);
+        gameCounter ++;
     }
     lowerTotal = lowerTotal + lowerCategory[6];
     updateScoreCard();
@@ -460,8 +483,12 @@ function updateScoreCard(){
     holdDie4.textContent = "Not Held";
     const holdDie5 = document.getElementById("die5Held");
     holdDie5.textContent = "Not Held";
-    
-    rollDice();
+    if (gameCounter < 13){
+        rollDice();
+    }
+    else{
+        alert('You have completed the game! Your total score is ' + grandTotal);
+    }
 }
 
 function holdDieOne(){
